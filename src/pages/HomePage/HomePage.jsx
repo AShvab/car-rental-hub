@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
+// import Navigation from "../../components/Navigation/Navigation";
+import { Container, Title} from "./HomePage.styled";
 
 const HomePage = () => {
   return (
-    <div >
-      <h1>HomePage</h1>
-    </div>
+    <Container> 
+      <Title>Car Rental Hub</Title>
+    </Container>
   );
 };
 
