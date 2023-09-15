@@ -1,14 +1,27 @@
 import React from "react";
-import { Container, Links, StyledLink, LogoLink } from "./Navigation.styled";
+import {
+  Container,
+  Links,
+  StyledLink,
+  LogoLink,
+  Icon,
+} from "./Navigation.styled";
+import sprite from "../../assets/sprite.svg";
+// color: #c5c7d3;
 
 const Navigation = () => {
   return (
     <Container>
-      <LogoLink to={"/"}>Logo</LogoLink>
+      <LogoLink to={"/"}>
+        <Icon width="32px" height="32px">
+          <use href={`${sprite}#icon-spinner9`} />
+        </Icon>
+        <span>CarRental</span>
+      </LogoLink>
       <Links>
-        <StyledLink to="/">HomePage</StyledLink>
-        <StyledLink to="/catalog">CatalogPage</StyledLink>
-        <StyledLink to="/favorites">FavoritePage</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/catalog">Catalog</StyledLink>
+        <StyledLink to="/favorites">Favorite</StyledLink>
       </Links>
     </Container>
   );

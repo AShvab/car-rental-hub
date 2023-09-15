@@ -1,10 +1,11 @@
 import React from 'react';
+import CarsList from '../../components/CarsList/CarsList';
 
 const CatalogPage = () => {
   return (
-    <div >
-      <h1>CatalogPage</h1>
-    </div>
+    <>
+      <CarsList />
+    </>
   );
 };
 
