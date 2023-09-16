@@ -7,7 +7,6 @@ import {
   Icon,
 } from "./Navigation.styled";
 import sprite from "../../assets/sprite.svg";
-// color: #c5c7d3;
 
 const Navigation = () => {
   return (

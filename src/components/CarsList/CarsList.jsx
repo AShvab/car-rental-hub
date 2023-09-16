@@ -1,57 +1,60 @@
 import React, { useState, useEffect } from "react";
-import { fetchAllCars } from "../../services/api";
+import { fetchCars } from "../../services/api";
 import Loader from "../Loader/Loader";
+import { Button, List, Text } from "./CarsList.styled";
+import CarItem from "../CarItem/CarItem";
 
 const CarsList = () => {
   const [cars, setCars] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    // Функція для отримання списку автомобілів
     const loadCars = async () => {
       setLoading(true);
       try {
-        const data = await fetchAllCars(page);
-        setCars((prevCars) => [...prevCars, ...data]); // Додаємо нові автомобілі до існуючого списку
-        setLoading(false);
+        const data = await fetchCars(page);
+
+        if (data.length === 0) {
+          setHasMore(false);
+        } else {
+          if (page === 1) {
+            setCars(data);
+          } else {
+            setCars((prevCars) => [...prevCars, ...data]);
+          }
+        }
       } catch (error) {
         console.error("Error fetching cars:", error);
+      } finally {
         setLoading(false);
       }
     };
-
-    loadCars(); // Викликаємо функцію отримання автомобілів
-  }, [page]); // Викликаємо функцію при зміні сторінки
+    loadCars();
+  }, [page]);
 
   const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
+    if (hasMore) {
+      setPage((prevPage) => prevPage + 1);
+    }
   };
 
   return (
     <>
-      <ul>
+      <List>
         {cars.map((car, id) => (
-          <li key={id}>
-            <img src={car.img} alt={car.make} />
-            <p>{car.make}</p>
-            <p>{car.model},</p>
-            <p>{car.year}</p>
-            <p>{car.rentalPrice}</p>
-            <p>{car.address}</p>
-            <p>{car.type}</p>
-            <p>{car.description}</p>
-            <p>{car.fuelConsumption}</p>
-            <p>{car.engineSize}</p>
-          </li>
+          <CarItem key={id} car={car} />
         ))}
-      </ul>
-
+      </List>
       {loading && <Loader />}
-
-      <button onClick={handleLoadMore}>Load more</button>
+      {!loading && hasMore && (
+        <Button onClick={handleLoadMore}>Load more</Button>
+      )}
+      {!loading && !hasMore && <Text>No more cars to load.</Text>}
     </>
   );
 };
 
 export default CarsList;
+

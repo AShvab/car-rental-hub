@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, List, ListItem, Photo, Title, Wrap} from "./HomePage.styled";
 import carImage from "../../assets/car-2209439_1280-min.png";
-// background: #c2c8cf;
 
 const HomePage = () => {
   return (
