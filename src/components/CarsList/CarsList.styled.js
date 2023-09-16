@@ -32,7 +32,4 @@ export const List = styled.ul`
   margin-right: auto;
 `;
 
-export const Text = styled.p`
-text-align: center;
-padding: 8px;
-`;
+

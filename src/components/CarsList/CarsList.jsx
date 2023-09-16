@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchCars } from "../../services/api";
 import Loader from "../Loader/Loader";
-import { Button, List, Text } from "./CarsList.styled";
+import { Button, List } from "./CarsList.styled";
 import CarItem from "../CarItem/CarItem";
 
 const CarsList = () => {
@@ -51,7 +51,6 @@ const CarsList = () => {
       {!loading && hasMore && (
         <Button onClick={handleLoadMore}>Load more</Button>
       )}
-      {!loading && !hasMore && <Text>No more cars to load.</Text>}
     </>
   );
 };
