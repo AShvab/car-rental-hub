@@ -71,7 +71,8 @@ export const LearnMoreBtn = styled.button`
   font-size: 14px;
   font-weight: 600;
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
+  &:hover,
+  &:focus {
     background: #0b44cd;
   }
 `;
