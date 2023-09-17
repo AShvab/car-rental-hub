@@ -4,11 +4,14 @@ import Loader from "../Loader/Loader";
 import { Button, List } from "./CarsList.styled";
 import CarItem from "../CarItem/CarItem";
 
+
 const CarsList = () => {
   const [cars, setCars] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+ 
+
 
   useEffect(() => {
     const loadCars = async () => {
@@ -45,6 +48,7 @@ const CarsList = () => {
       <List>
         {cars.map((car, id) => (
           <CarItem key={id} car={car} />
+          
         ))}
       </List>
       {loading && <Loader />}

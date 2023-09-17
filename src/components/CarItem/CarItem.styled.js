@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Item = styled.li`
-    width: 274px;
+ position: relative;
+  width: 274px;
   height: 426px;
-  margin-bottom:0;
+  margin-bottom: 0;
 `;
 
 export const Img = styled.img`
+ 
   width: 100%;
   height: 268px;
   object-fit: cover;
@@ -75,4 +77,15 @@ export const LearnMoreBtn = styled.button`
   &:focus {
     background: #0b44cd;
   }
+`;
+
+export const ButtonHeart = styled.svg`
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index:99;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+
 `;
