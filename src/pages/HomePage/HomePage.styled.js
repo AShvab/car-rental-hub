@@ -17,7 +17,6 @@ export const Container = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   height: 93vh;
-  /* background: #318139; */
   background: #d9e2ed;
 `;
 
