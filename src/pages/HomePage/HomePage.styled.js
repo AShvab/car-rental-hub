@@ -29,8 +29,7 @@ flex-direction: column;
 export const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-size: 70px;
-  text-align: center;
-  /* color: #ffffff; */
+  text-align: center; 
   margin-top: 25vh;
   margin-bottom: 40px;
   padding:0;
@@ -50,7 +49,6 @@ letter-spacing: 1px;
 `;
 
 export const ListItem = styled.li`
-  /* color: #ffffff; */
   margin-bottom: 28px; 
   animation: ${appearFromBottom} 1s ease-out;
 `;
