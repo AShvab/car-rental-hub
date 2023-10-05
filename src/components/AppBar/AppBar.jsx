@@ -1,4 +1,4 @@
-import Navigation from "../navigation/Navigation";
+import Navigation from "../Navigation/Navigation";
 import { Header } from "./AppBar.styled";
 
 const AppBar = () => {
